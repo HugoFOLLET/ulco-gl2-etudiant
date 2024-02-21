@@ -6,14 +6,14 @@
 
 enum class Level { Info, Warning, Error };
 
-using Item = std::tuple<Level, std::string>;
+using Item = std::tuple<Level, std::string, std::string>;
 
 class Logger {
   private:
     std::vector<Item> _items;
 
   public:
-    void addItem(Level l, const std::string & m);
+    void addItem(Level l, const std::string & m, const std::string & temps);
     std::string reportByAdded() const;
     std::string reportByLevel() const;
 };
