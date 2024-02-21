@@ -2,7 +2,7 @@
 
 dépôt étudiant du [module de GL2](https://juliendehos.gitlab.io/posts/gl2/index.html)
 
-- NOM : TODO
-- PRENOM : TODO
-- GROUPE : TODO
+- NOM : FOLLET
+- PRENOM : Hugo
+- GROUPE : 2
 
