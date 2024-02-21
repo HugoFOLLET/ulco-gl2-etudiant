@@ -2,7 +2,7 @@
 
 dépôt étudiant du [module de GL2](https://juliendehos.gitlab.io/posts/gl2/index.html)
 
-- NOM : FOLLET
+- NOM : FOLLETT
 - PRENOM : Hugo
 - GROUPE : 2
 
