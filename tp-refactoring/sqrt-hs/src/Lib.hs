@@ -1,4 +1,6 @@
 module Lib where
 
-mysqrt :: Double -> Double
-mysqrt x = sqrt x
+mysqrt :: Double -> Maybe Double
+mysqrt x 
+    | x < 0 = Nothing
+    | otherwise = Just(sqrt x)
