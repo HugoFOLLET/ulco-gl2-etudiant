@@ -7,7 +7,7 @@ void testBoard(Board & b) {
 	std::cout << b.getTitle() << std::endl;
 	b.add("item 1");
 	b.add("item 2");
-	ReportFile r("text.txt");
+	ReportFile r("tmp.txt");
 	r.report(b);
 }
 
@@ -25,6 +25,7 @@ int main() {
 
 	NumBoard b2;
 	testNumBoard(b2);
+	testBoard(b2);
 
 	return 0;
 }
