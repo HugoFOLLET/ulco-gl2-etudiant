@@ -1,4 +1,4 @@
-
+#include "Titleable.hh"
 #include "ReportStdout.hpp"
 #include "ReportFile.hh"
 

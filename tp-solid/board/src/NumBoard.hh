@@ -16,7 +16,7 @@ class NumBoard : public Board{
 			compt++;
 		}
 
-		virtual std::string getTitle()const override{
+		std::string getTitle()const override{
 			return "NumBoard";
 		}
 		
