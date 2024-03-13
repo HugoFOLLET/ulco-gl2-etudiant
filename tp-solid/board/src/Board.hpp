@@ -1,11 +1,12 @@
 #pragma once
 
 #include "Titleable.hh"
+#include "Itemable.hpp"
 
 #include <fstream>
 #include <iostream>
 
-class Board : public Titleable{
+class Board : public Titleable, public Itemable{
 	private:
 		std::vector<std::string> _tasks;
 
@@ -16,7 +17,7 @@ class Board : public Titleable{
 			_tasks.push_back(t);
 		}
 
-		std::vector<std::string> getItems()const{
+		std::vector<std::string> getItems()const override{
 			return _tasks;
 		}
 
