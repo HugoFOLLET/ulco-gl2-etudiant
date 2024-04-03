@@ -22,3 +22,14 @@ TEST_CASE("test view 3"){
 	std::string print="Todo:\n2. TODO 2\nDone:\n1. TODO\n";
 	REQUIRE(printBoard(b) == print);
 }
+
+TEST_CASE("test view 4"){
+	Board b;
+	b.addTodo("TODO");
+	b.addTodo("TODO 2");
+	b.toDone(1);
+	std::ostringstream print;
+	showBoard(b, print);
+	std::string expected="Todo:\n2. TODO 2\nDone:\n1. TODO\n";
+	REQUIRE(expected == print.str());
+}

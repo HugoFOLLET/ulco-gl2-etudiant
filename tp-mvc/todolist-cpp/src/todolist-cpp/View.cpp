@@ -15,3 +15,14 @@ std::string printBoard(const Board& b){
 	}
 	return print;
 }
+
+void showBoard(const Board& b, std::ostream& os){
+	os << "Todo:\n";
+	for(auto it=b._todo.begin(); it!=b._todo.end(); it++){
+		os << showTask(*it) << std::endl;
+	}
+	os << "Done:\n";
+	for(auto it=b._done.begin(); it!=b._done.end(); it++){
+		os << showTask(*it) << std::endl;
+	}
+}
