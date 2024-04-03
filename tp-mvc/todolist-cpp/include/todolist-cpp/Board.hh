@@ -3,6 +3,7 @@
 #include <todolist-cpp/Task.hpp>
 
 #include <list>
+#include <iostream>
 
 class Board{
 	private:
@@ -14,11 +15,7 @@ class Board{
 		
 		Board():_nextId(1){}
 
-		void addTodo(std::string desc){
-			Task t {_nextId, desc};
-			auto it = _todo.begin();
-			it = _todo.insert(it, t);
-			_nextId++;
-		}
+		void addTodo(std::string desc);
+		bool toDone(int id);
 
 };
