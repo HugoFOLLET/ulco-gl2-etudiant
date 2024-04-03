@@ -4,9 +4,9 @@
 
 int main() {
 
-    Task t {1, "TODO"};
-    std::cout << t._name << std::endl;
+	Task t {1, "TOTO"};
+	std::cout << t._name << std::endl;
 
-    return 0;
+	return 0;
 }
 

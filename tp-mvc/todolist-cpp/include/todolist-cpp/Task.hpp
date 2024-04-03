@@ -3,7 +3,7 @@
 #include <string>
 
 struct Task {
-    int _id;
-    std::string _name;
+	int _id;
+	std::string _name;
 };
 
