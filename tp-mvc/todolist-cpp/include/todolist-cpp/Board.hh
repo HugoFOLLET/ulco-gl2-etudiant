@@ -7,10 +7,10 @@
 class Board{
 	private:
 		int _nextId;
-		std::list <Task> _done;
 	
 	public:
 		std::list <Task> _todo;
+		std::list <Task> _done;
 		
 		Board():_nextId(1){}
 

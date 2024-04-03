@@ -7,8 +7,8 @@
 int main() {
 
 	Board b;
-	Task t {1, "TOTO"};
-	std::cout << t._name << std::endl;
+	b.addTodo("TODO");
+	std::cout << printBoard(b) << std::endl;
 
 	return 0;
 }
