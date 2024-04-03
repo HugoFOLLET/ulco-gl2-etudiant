@@ -4,5 +4,5 @@
 
 TEST_CASE("test view 1"){
     Task t {1, "TODO"};
-    REQUIRE(showTask(t) == "TODO");
+    REQUIRE(showTask(t) == "1. TODO");
 }

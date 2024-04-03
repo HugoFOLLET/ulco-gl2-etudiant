@@ -5,7 +5,8 @@ include_directories( include )
 # library
 add_library( todolist-cpp-lib
     src/todolist-cpp/Task.cpp
-    src/todolist-cpp/View.cpp )
+    src/todolist-cpp/View.cpp
+    src/todolist-cpp/Board.cc )
 
 # executable
 add_executable( todolist-cpp-app
@@ -19,6 +20,7 @@ install( TARGETS todolist-cpp-app DESTINATION bin )
 add_executable( todolist-cpp-test
     test/todolist-cpp/Task-test.cpp
     test/todolist-cpp/View-test.cpp
+    test/todolist-cpp/Board-test.cc
     test/main.cpp )
 target_link_libraries( todolist-cpp-test todolist-cpp-lib )
 enable_testing()
