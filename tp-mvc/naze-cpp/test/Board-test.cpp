@@ -27,5 +27,26 @@ TEST_CASE( "tryGoLeft, ok" ) {
     REQUIRE( b.getJ() == 2 );
 }
 
+TEST_CASE("tryGoRight, ok"){
+    BoardTest b(5,1);
+    b.tryGoRight();
+    REQUIRE( b.getI() == 5 );
+    REQUIRE( b.getJ() == 2 );
+}
+
+TEST_CASE("tryGoUp, ok"){
+    BoardTest b(9,0);
+    b.tryGoUp();
+    REQUIRE(b.getI()==8);
+    REQUIRE(b.getJ()==0);
+}
+
+TEST_CASE("tryGoDown, ok"){
+    BoardTest b(8,0);
+    b.tryGoDown();
+    REQUIRE(b.getI()==9);
+    REQUIRE(b.getJ()==0);
+}
+
 // TODO
 
