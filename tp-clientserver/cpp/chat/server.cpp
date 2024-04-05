@@ -45,8 +45,8 @@ int main() {
 		}
 	};
 	ws.onclose = [&net](const WebSocketChannelPtr& channel) {
+		std::cout << "client " << net.findName(channel) << " disconnected" << std::endl;
 		net.del(channel);
-		std::cout << "client disconnected" << std::endl;
 	};
 
 	hv::WebSocketServer server;
