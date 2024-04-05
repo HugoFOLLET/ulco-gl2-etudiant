@@ -6,23 +6,31 @@
 
 int main(int argc, char** argv) {
 
-    hv::WebSocketClient ws;
-    ws.onopen = []() {
-        std::cout << "connected" << std::endl;
-    };
-    ws.onmessage = [](const std::string& msg) {
-        std::cout << "received: " << msg << std::endl;
-    };
-    ws.onclose = []() {
-        std::cout << "disconnected" << std::endl;
-        exit(0);
-    };
-    ws.open("ws://127.0.0.1:9000");
+	hv::WebSocketClient ws;
+	ws.onopen = []() {
+		std::cout << "connected" << std::endl;
+	};
+	ws.onmessage = [](const std::string& msg) {
+		std::cout << "received: " << msg << std::endl;
+	};
+	ws.onclose = []() {
+		std::cout << "disconnected" << std::endl;
+		exit(0);
+	};
+	ws.open("ws://127.0.0.1:9000");
 
-    while (true) {
-        std::this_thread::sleep_for(std::chrono::milliseconds(200));
-    }
+	std::string input;
+	while (true) {
+		std::getline(std::cin, input);
+		if(input == ""){
+			ws.send("Déconnexion");
+			ws.close();
+			break;
+		}
+		ws.send(input);
+		std::this_thread::sleep_for(std::chrono::milliseconds(200));
+	}
 
-    return 0;
+	return 0;
 }
 
