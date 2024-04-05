@@ -25,17 +25,24 @@ int main() {
 	Net net;
 
 	hv::WebSocketService ws;
+
 	ws.onopen = [&net](const WebSocketChannelPtr& channel, const HttpRequestPtr& req) {
 		net.add(channel);
-		std::cout << "client connected" << std::endl;
+		channel->send("Pseudo ?");
 	};
 	ws.onmessage = [&net](const WebSocketChannelPtr& channel, const std::string& msg) {
-		auto sendInput = [msg, channel](const WebSocketChannelPtr& client){
+		auto sendInput = [msg, channel, &net](const WebSocketChannelPtr& client){
 			if(client!=channel){
-				client->send(msg);
+				client->send("["+net.findName(channel)+"] "+msg);
 			}
 		};
-		net.map(sendInput);
+		if(net.isPending(channel)){
+			if(net.giveName(channel, msg)){
+				std::cout << "Client " << msg << " connected !" << std::endl;
+			}
+		}else{
+			net.map(sendInput);
+		}
 	};
 	ws.onclose = [&net](const WebSocketChannelPtr& channel) {
 		net.del(channel);

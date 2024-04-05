@@ -11,14 +11,13 @@ int main(int argc, char** argv) {
 		std::cout << "connected" << std::endl;
 	};
 	ws.onmessage = [](const std::string& msg) {
-		std::cout << "received: " << msg << std::endl;
+		std::cout << msg << std::endl;
 	};
 	ws.onclose = []() {
 		std::cout << "disconnected" << std::endl;
 		exit(0);
 	};
 	ws.open("ws://127.0.0.1:9000");
-
 	std::string input;
 	while (true) {
 		std::getline(std::cin, input);
