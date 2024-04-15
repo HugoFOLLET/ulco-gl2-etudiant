@@ -3,9 +3,9 @@
 using namespace std;
 
 int main() {
+	Jeu j;
+	cout << j << endl;
 
-    cout << "TODO" << endl;
-
-    return 0;
+	return 0;
 }
 
