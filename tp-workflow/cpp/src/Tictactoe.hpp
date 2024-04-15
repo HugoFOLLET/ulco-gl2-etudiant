@@ -36,6 +36,8 @@ class Jeu {
 		/// Retourne un string permettant d'afficher le joueur qui doit jouer
 		std::string getJoueur();
 
+		void afficherGagnant(std::ostream& os);
+
 		/// Joue un coup pour le joueur courant.
 		/// 
 		/// i ligne choisie (0, 1 ou 2)

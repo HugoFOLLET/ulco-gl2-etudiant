@@ -18,6 +18,8 @@ int main() {
 		jeu.jouer(i,j);
 	}
 
+	jeu.afficherGagnant(cout);
+
 	return 0;
 }
 

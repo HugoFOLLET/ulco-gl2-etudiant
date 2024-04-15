@@ -26,6 +26,23 @@ std::string Jeu::getJoueur(){
 	}
 }
 
+void Jeu::afficherGagnant(std::ostream& os){
+	switch(getStatus()){
+		case Status::RougeGagne:
+			os << "Le joueur rouge a gagné !" << std::endl;
+			break;
+		case Status::VertGagne:
+			os << "Le joueur vert a gagné !" << std::endl;
+			break;
+		case Status::Egalite:
+			os << "Egalité pour les deux joueurs" << std::endl;
+			break;
+		default:
+			os << "Jeu non fini" << std::endl;
+			break;
+	}
+}
+
 
 Status Jeu::getVictoire(){
 	// On regarde les lignes horizontales et verticales
