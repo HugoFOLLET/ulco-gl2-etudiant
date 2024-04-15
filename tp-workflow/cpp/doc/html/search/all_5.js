@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['operator_3c_3c_0',['operator&lt;&lt;',['../Tictactoe_8cpp.html#a25afc2af9da3b08aad446d3102046638',1,'operator&lt;&lt;(std::ostream &amp;os, const Jeu &amp;jeu):&#160;Tictactoe.cpp'],['../Tictactoe_8hpp.html#a25afc2af9da3b08aad446d3102046638',1,'operator&lt;&lt;(std::ostream &amp;os, const Jeu &amp;jeu):&#160;Tictactoe.cpp']]]
+  ['main_0',['main',['../tictactoe-cli_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'tictactoe-cli.cpp']]],
+  ['mainpage_2ehpp_1',['mainpage.hpp',['../mainpage_8hpp.html',1,'']]]
 ];

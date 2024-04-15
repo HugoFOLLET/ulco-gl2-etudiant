@@ -87,13 +87,18 @@ Fonctions membres publiques</h2></td></tr>
 <tr class="memdesc:acc5795ee00edf75516d3dfe65be3e6d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur à utiliser.  <br /></td></tr>
 <tr class="separator:acc5795ee00edf75516d3dfe65be3e6d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a98bd75332c3e5a02b4cba66ac71be750"><td class="memItemLeft" align="right" valign="top"><a class="el" href="Tictactoe_8hpp.html#a67a0db04d321a74b7e7fcfd3f1a3f70b">Status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJeu.html#a98bd75332c3e5a02b4cba66ac71be750">getStatus</a> () const</td></tr>
+<tr class="memdesc:a98bd75332c3e5a02b4cba66ac71be750"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne le status du jeu courant (Egalite, RougeGagne, VertGagne, RougeJoue, VertJoue).  <br /></td></tr>
 <tr class="separator:a98bd75332c3e5a02b4cba66ac71be750"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a022984175862013a957120e3066d0140"><td class="memItemLeft" align="right" valign="top"><a class="el" href="Tictactoe_8hpp.html#a0133c02dfc35ffbaf07ad1a587dac4d1">Cell</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJeu.html#a022984175862013a957120e3066d0140">getCell</a> (int i, int j) const</td></tr>
 <tr class="memdesc:a022984175862013a957120e3066d0140"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne l'état d'une case du plateau.  <br /></td></tr>
 <tr class="separator:a022984175862013a957120e3066d0140"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c5e8a8b2d35bf3c2831e06b4baa5dd1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="Tictactoe_8hpp.html#a67a0db04d321a74b7e7fcfd3f1a3f70b">Status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJeu.html#a3c5e8a8b2d35bf3c2831e06b4baa5dd1">getVictoire</a> ()</td></tr>
+<tr class="memdesc:a3c5e8a8b2d35bf3c2831e06b4baa5dd1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vérifie si quelqu'un a gagné ou si il y a égalité  <br /></td></tr>
+<tr class="separator:a3c5e8a8b2d35bf3c2831e06b4baa5dd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2f3bce909fa1582440cacb5e1923ae0e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJeu.html#a2f3bce909fa1582440cacb5e1923ae0e">jouer</a> (int i, int j)</td></tr>
 <tr class="separator:a2f3bce909fa1582440cacb5e1923ae0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0bdd23a350c6b92a83474666e7b0f933"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJeu.html#a0bdd23a350c6b92a83474666e7b0f933">raz</a> ()</td></tr>
+<tr class="memdesc:a0bdd23a350c6b92a83474666e7b0f933"><td class="mdescLeft">&#160;</td><td class="mdescRight">Réinitialise le jeu.  <br /></td></tr>
 <tr class="separator:a0bdd23a350c6b92a83474666e7b0f933"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
@@ -164,6 +169,28 @@ Fonctions membres publiques</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Retourne le status du jeu courant (Egalite, RougeGagne, VertGagne, RougeJoue, VertJoue). </p>
+
+</div>
+</div>
+<a id="a3c5e8a8b2d35bf3c2831e06b4baa5dd1" name="a3c5e8a8b2d35bf3c2831e06b4baa5dd1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c5e8a8b2d35bf3c2831e06b4baa5dd1">&#9670;&#160;</a></span>getVictoire()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="Tictactoe_8hpp.html#a67a0db04d321a74b7e7fcfd3f1a3f70b">Status</a> Jeu::getVictoire </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Vérifie si quelqu'un a gagné ou si il y a égalité </p>
+<dl class="section return"><dt>Renvoie</dt><dd>enum Status </dd></dl>
+
 </div>
 </div>
 <a id="a2f3bce909fa1582440cacb5e1923ae0e" name="a2f3bce909fa1582440cacb5e1923ae0e"></a>
@@ -191,6 +218,9 @@ Fonctions membres publiques</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Joue un coup pour le joueur courant.</p>
+<p>i ligne choisie (0, 1 ou 2) j colonne choisie (0, 1 ou 2)</p>
+<p>Si le coup est invalide, retourne false. Si le coup est valide, joue le coup et retourne true. </p>
 
 </div>
 </div>
@@ -208,6 +238,8 @@ Fonctions membres publiques</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Réinitialise le jeu. </p>
 
 </div>
 </div>

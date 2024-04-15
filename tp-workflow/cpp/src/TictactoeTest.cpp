@@ -28,6 +28,56 @@ TEST_CASE("Test jouer"){
 	REQUIRE(j.getStatus()==Status::RougeJoue);
 }
 
+TEST_CASE("Victoire rouge"){
+	Jeu j;
+	j.jouer(1,1);
+	j.jouer(0,1);
+	j.jouer(1,2);
+	j.jouer(0,2);
+	j.jouer(1,0);
+
+	REQUIRE(j.getVictoire()==Status::RougeGagne);
+}
+
+TEST_CASE("Victoire vert"){
+	Jeu j;
+	j.jouer(1,1);
+	j.jouer(1,0);
+	j.jouer(1,2);
+	j.jouer(2,0);
+	j.jouer(2,2);
+	j.jouer(0,0);
+
+	REQUIRE(j.getVictoire()==Status::VertGagne);
+}
+
+TEST_CASE("Pas de victoire"){
+	Jeu j;
+	j.jouer(1,0);
+	j.jouer(2,0);
+	REQUIRE(j.getVictoire()==j.getStatus());
+}
+
+TEST_CASE("Egalité"){
+	Jeu j;
+	j.jouer(1,1);
+
+	j.jouer(2,2);
+	j.jouer(0,0);
+
+
+	j.jouer(0,2);
+	j.jouer(2,0);
+
+	j.jouer(1,0);
+	j.jouer(1,2);
+
+	j.jouer(0,1);
+	j.jouer(2,1);
+
+	REQUIRE(j.getVictoire()==Status::Egalite);
+}
+
 
 	// TODO
 
