@@ -33,6 +33,9 @@ class Jeu {
 		/// @return enum Status
 		Status getVictoire();
 
+		/// Retourne un string permettant d'afficher le joueur qui doit jouer
+		std::string getJoueur();
+
 		/// Joue un coup pour le joueur courant.
 		/// 
 		/// i ligne choisie (0, 1 ou 2)

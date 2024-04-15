@@ -15,6 +15,17 @@ Cell Jeu::getCell(int i, int j) const {
 	return _plateau[i][j];
 }
 
+std::string Jeu::getJoueur(){
+	switch(getStatus()){
+		case Status::RougeJoue:
+			return "Rouge";
+		case Status::VertJoue:
+			return "Vert";
+		default:
+			return "Default";
+	}
+}
+
 
 Status Jeu::getVictoire(){
 	// On regarde les lignes horizontales et verticales
