@@ -12,7 +12,8 @@ enum class Cell { Vide, Rouge, Vert };
 class Jeu {
 	private:
 		std::array<std::array<Cell, 3>, 3> _plateau;
-		// TODO
+		
+		Status _statut;
 
 	public:
 		/// Constructeur à utiliser.
@@ -33,7 +34,7 @@ class Jeu {
 		// joue le coup et retourne true.
 		bool jouer(int i, int j);
 
-		// Réinitialise le jeu.
+		/// Réinitialise le jeu.
 		void raz();
 };
 
