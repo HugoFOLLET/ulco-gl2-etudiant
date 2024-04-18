@@ -28,7 +28,7 @@ PYBIND11_MODULE(tictactoe, m) {
 		.def("afficherGagnant", &Jeu::afficherGagnant)
 		.def("jouer", &Jeu::jouer)
 		.def("raz", &Jeu::raz)
-		.def("showStatus", &Jeu::showStatus);
+		.def("showStatus", &Jeu::showStringStatus);
 
 }
 

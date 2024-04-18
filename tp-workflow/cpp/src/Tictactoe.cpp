@@ -165,6 +165,30 @@ void Jeu::raz(){
 }
 
 
+std::string Jeu::showStringStatus(Status statut){
+	std::string msg;
+	switch(statut){
+		case Status::Default:
+			msg="Défault";
+			break;
+		case Status::Egalite:
+			msg="Egalité";
+			break;
+		case Status::RougeGagne:
+			msg="Rouge Gagne";
+			break;
+		case Status::VertGagne:
+			msg="Vert Gagne";
+			break;
+		case Status::RougeJoue:
+			msg="Tour de Rouge";
+			break;
+		case Status::VertJoue:
+			msg="Tour de Vert";
+			break;
+	}
+	return msg;
+}
 
 
 void Jeu::showStatus(std::ostream& os, Status statut){

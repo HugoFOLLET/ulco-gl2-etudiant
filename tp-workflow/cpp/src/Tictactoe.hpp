@@ -54,6 +54,11 @@ class Jeu {
 		/// @param os : ostream
 		/// @param statut : Status
 		void showStatus(std::ostream& os, Status statut);
+
+		/// @brief Fonction qui permet de récupérer le statut via un string
+		/// @param statut : enum Status
+		/// @return status : string
+		std::string showStringStatus(Status statut);
 };
 
 /// Affiche la grille directement dans un std::cout
