@@ -44,25 +44,29 @@ void Jeu::afficherGagnant(std::ostream& os){
 }
 
 
-Status Jeu::getVictoire(){
+bool Jeu::getVictoire(){
 	// On regarde les lignes horizontales et verticales
 	int i=0;
 	while (i<3){
 		if(_plateau[i][0]==_plateau[i][1] && _plateau[i][1]==_plateau[i][2] && _plateau[i][0]!=Cell::Vide){
-			return verifVictoire(i,0);
+			Status victoire=verifVictoire(i,0);
+			return victoire==Status::RougeGagne || victoire==Status::VertGagne;
 		}
 		if(_plateau[0][i]==_plateau[1][i] && _plateau[1][i]==_plateau[2][i] && _plateau[0][i]!=Cell::Vide){
-			return verifVictoire(0,i);
+			Status victoire=verifVictoire(0,i);
+			return victoire==Status::RougeGagne || victoire==Status::VertGagne;
 		}
 		i=i+1;
 	}
 
 	// On regarde les lignes diagonales
 	if(_plateau[0][0]==_plateau[1][1] && _plateau[1][1]==_plateau[2][2] && _plateau[1][1]!=Cell::Vide){
-		return verifVictoire(1,1);
+		Status victoire = verifVictoire(1,1);
+		return victoire==Status::RougeGagne || victoire==Status::VertGagne;
 	}
 	if(_plateau[0][2]==_plateau[1][1] && _plateau[2][0]==_plateau[1][1] && _plateau[1][1]!=Cell::Vide){
-		return verifVictoire(1,1);
+		Status victoire = verifVictoire(1,1);
+		return victoire==Status::RougeGagne || victoire==Status::VertGagne;
 	}
 
 	//On regarde si le plateau est rempli
@@ -70,25 +74,29 @@ Status Jeu::getVictoire(){
 	while(i<3){
 		int j=0;
 		while(j<3){
-			if(getCell(i,j)==Cell::Vide){
-				return getStatus();
+			if(getCell(i,j)==Cell::Vide){	//Si une case n'est pas vide, on retourne faux
+				return false;
 			}
 			j++;
 		}
 		i=i+1;
 	}
-	return Status::Egalite;
+	//Sinon, c'est l'égalité
+	_statut=Status::Egalite;
+	return true;
 }
 
 Status Jeu::verifVictoire(int i, int j){
-	switch (getCell(i,j))
-	{
-	case Cell::Rouge:
-		return Status::RougeGagne;
-	case Cell::Vert:
-		return Status::VertGagne;
-	default:
-		return Status::Egalite;
+	switch (getCell(i,j)){
+		case Cell::Rouge:
+			_statut=Status::RougeGagne;
+			return Status::RougeGagne;
+		case Cell::Vert:
+			_statut=Status::VertGagne;
+			return Status::VertGagne;
+		default:
+			_statut=Status::Egalite;
+			return Status::Egalite;
 	}
 
 }
@@ -137,6 +145,8 @@ bool Jeu::jouer(int i, int j) {
 			default:
 				return false;
 		}
+	}else{
+		return false;
 	}
 	return true;
 }
@@ -154,3 +164,29 @@ void Jeu::raz(){
 	_statut=Status::RougeJoue;
 }
 
+
+
+
+void Jeu::showStatus(std::ostream& os, Status statut){
+	switch(statut){
+		case Status::Default:
+			os << "Défault";
+			break;
+		case Status::Egalite:
+			os << "Egalité";
+			break;
+		case Status::RougeGagne:
+			os << "Rouge Gagne";
+			break;
+		case Status::VertGagne:
+			os << "Vert Gagne";
+			break;
+		case Status::RougeJoue:
+			os << "Tour de Rouge";
+			break;
+		case Status::VertJoue:
+			os << "Tour de Vert";
+			break;
+	}
+	os << std::endl;
+}

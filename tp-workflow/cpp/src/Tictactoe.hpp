@@ -30,8 +30,8 @@ class Jeu {
 		Cell getCell(int i, int j) const;
 
 		/// @brief Vérifie si quelqu'un a gagné ou si il y a égalité
-		/// @return enum Status
-		Status getVictoire();
+		/// @return booléen
+		bool getVictoire();
 
 		/// Retourne un string permettant d'afficher le joueur qui doit jouer
 		std::string getJoueur();
@@ -49,6 +49,9 @@ class Jeu {
 
 		/// Réinitialise le jeu.
 		void raz();
+
+		//Débug
+		void showStatus(std::ostream& os, Status statut);
 };
 
 /// Affiche la grille directement dans un std::cout
