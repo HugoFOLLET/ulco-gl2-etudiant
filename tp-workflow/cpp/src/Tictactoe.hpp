@@ -50,7 +50,9 @@ class Jeu {
 		/// Réinitialise le jeu.
 		void raz();
 
-		//Débug
+		/// @brief Fonction qui indique le statut passé en paramètre
+		/// @param os : ostream
+		/// @param statut : Status
 		void showStatus(std::ostream& os, Status statut);
 };
 
